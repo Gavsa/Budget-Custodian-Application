@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "53104709665",
+    "project_id": "budget-custodian-application"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53104709665:android:8023324aac2bf79f",
+        "android_client_info": {
+          "package_name": "at.htl.budgetcustodianapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53104709665-92fnkltcrgsmm5trdpc22rnf391lk2e5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "at.htl.budgetcustodianapplication",
+            "certificate_hash": "2922c739fce3548e1d5e983b291fb32cdf1280c5"
+          }
+        },
+        {
+          "client_id": "53104709665-m188fi35g9hmkk8upg2knaad5dk5o2uh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDqCLmgNN4vXQZvbrDrmVUuUhWMglS_xY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
