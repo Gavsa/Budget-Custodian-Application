@@ -17,12 +17,12 @@ public class MainFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private ImageButton btnHotel;
-    private ImageButton btnVerpflegung;
-    private ImageButton btnTreibstoff;
-    private ImageButton btnSonstiges;
-    private ImageButton btnCreate;
-    private ImageButton btnGoogleMaps;
+    private ImageButton btn_hotel;
+    private ImageButton btn_food;
+    private ImageButton btn_fuel;
+    private ImageButton btn_other;
+    private ImageButton btn_create;
+    private ImageButton btn_googleMaps;
 
     private InitialFragmentCall mListener;
 
@@ -51,14 +51,14 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-        btnHotel = (ImageButton) view.findViewById(R.id.btnHotel);
-        btnTreibstoff = (ImageButton) view.findViewById(R.id.btnTreibstoff);
-        btnSonstiges = (ImageButton) view.findViewById(R.id.btnTreibstoff);
-        btnVerpflegung = (ImageButton) view.findViewById(R.id.btnVerpflegung);
-        btnCreate = (ImageButton) view.findViewById(R.id.btnCreate);
-        btnGoogleMaps = (ImageButton) view.findViewById(R.id.btnGoogleMaps);
+        btn_hotel = (ImageButton) view.findViewById(R.id.btn_hotel);
+        btn_fuel = (ImageButton) view.findViewById(R.id.btn_fuel);
+        btn_other = (ImageButton) view.findViewById(R.id.btn_other);
+        btn_food = (ImageButton) view.findViewById(R.id.btn_food);
+        btn_create = (ImageButton) view.findViewById(R.id.btn_create);
+        btn_googleMaps = (ImageButton) view.findViewById(R.id.btn_GoogleMaps);
 
-        btnHotel.setOnClickListener(new View.OnClickListener() {
+        btn_hotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mListener.initialFragmentCall();

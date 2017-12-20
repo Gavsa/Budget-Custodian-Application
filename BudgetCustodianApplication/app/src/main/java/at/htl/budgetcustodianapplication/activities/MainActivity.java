@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Init
     @Override
     public void initialFragmentCall() {
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.fragment_container, new HotelFragment()).commit();
+        manager.beginTransaction().replace(R.id.fragment_container, new HotelFragment()).addToBackStack("back").commit();
     }
 
     @Override
