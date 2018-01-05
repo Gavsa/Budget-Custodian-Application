@@ -7,30 +7,22 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import at.htl.budgetcustodianapplication.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link HotelFragment.OnFragmentInteractionListener} interface
+ * {@link ActivitiesFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link HotelFragment#newInstance} factory method to
+ * Use the {@link ActivitiesFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class    HotelFragment extends Fragment {
+public class ActivitiesFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    private TextView tv_title;
-    private TextView tv_grund;
-    private TextView et_amount;
-    private Button btn_save;
-
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -38,7 +30,7 @@ public class    HotelFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public HotelFragment() {
+    public ActivitiesFragment() {
         // Required empty public constructor
     }
 
@@ -48,11 +40,11 @@ public class    HotelFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment HotelFragment.
+     * @return A new instance of fragment ActivitiesFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static HotelFragment newInstance(String param1, String param2) {
-        HotelFragment fragment = new HotelFragment();
+    public static ActivitiesFragment newInstance(String param1, String param2) {
+        ActivitiesFragment fragment = new ActivitiesFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -73,14 +65,7 @@ public class    HotelFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_hotel, container, false);
-        tv_title = (TextView) v.findViewById(R.id.tv_title);
-        et_amount = (TextView) v.findViewById(R.id.et_amount);
-        tv_grund = (TextView) v.findViewById(R.id.tv_grund);
-
-
-
-        return v;
+        return inflater.inflate(R.layout.fragment_activities, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

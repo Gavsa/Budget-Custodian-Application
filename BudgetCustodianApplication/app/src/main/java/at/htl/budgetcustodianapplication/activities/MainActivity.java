@@ -6,11 +6,21 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 import at.htl.budgetcustodianapplication.R;
+import at.htl.budgetcustodianapplication.facades.FoodFragment;
+import at.htl.budgetcustodianapplication.facades.FuelFragment;
+import at.htl.budgetcustodianapplication.facades.GoogleMapsFragment;
 import at.htl.budgetcustodianapplication.facades.HotelFragment;
 import at.htl.budgetcustodianapplication.facades.MainFragment;
+import at.htl.budgetcustodianapplication.facades.OthersFragment;
 
 
-public class MainActivity extends AppCompatActivity implements MainFragment.InitialFragmentCall, HotelFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements MainFragment.buttonFragmentCall,
+        HotelFragment.OnFragmentInteractionListener,
+        FoodFragment.OnFragmentFoodInteractionListener,
+        OthersFragment.OnFragmentInteractionListener,
+        GoogleMapsFragment.OnFragmentInteractionListener,
+        FuelFragment.OnFragmentInteractionListener
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +43,33 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Init
     }
 
     @Override
-    public void initialFragmentCall() {
+    public void btn_hotelFragmentCall() {
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.fragment_container, new HotelFragment()).addToBackStack("back").commit();
+    }
+
+    @Override
+    public void btn_foodFragmentCall() {
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.fragment_container, new FoodFragment()).addToBackStack("back").commit();
+    }
+
+    @Override
+    public void btn_otherFragmentCall() {
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.fragment_container, new OthersFragment()).addToBackStack("back").commit();
+    }
+
+    @Override
+    public void btn_googleMapsFragmentCall() {
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.fragment_container, new GoogleMapsFragment()).addToBackStack("back").commit();
+    }
+
+    @Override
+    public void btn_fuelOnClickListener() {
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.fragment_container, new FuelFragment()).addToBackStack("back").commit();
     }
 
     @Override

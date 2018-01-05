@@ -24,7 +24,7 @@ public class MainFragment extends Fragment {
     private ImageButton btn_create;
     private ImageButton btn_googleMaps;
 
-    private InitialFragmentCall mListener;
+    private buttonFragmentCall mListener;
 
     public MainFragment() {
     }
@@ -55,15 +55,40 @@ public class MainFragment extends Fragment {
         btn_fuel = (ImageButton) view.findViewById(R.id.btn_fuel);
         btn_other = (ImageButton) view.findViewById(R.id.btn_other);
         btn_food = (ImageButton) view.findViewById(R.id.btn_food);
-        btn_create = (ImageButton) view.findViewById(R.id.btn_create);
+        //btn_create = (ImageButton) view.findViewById(R.id.btn_create);
         btn_googleMaps = (ImageButton) view.findViewById(R.id.btn_GoogleMaps);
 
         btn_hotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.initialFragmentCall();
+                mListener.btn_hotelFragmentCall();
             }
         });
+        btn_food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.btn_foodFragmentCall();
+            }
+        });
+        btn_other.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.btn_otherFragmentCall();
+            }
+        });
+        btn_googleMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.btn_googleMapsFragmentCall();
+            }
+        });
+        btn_fuel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.btn_fuelOnClickListener();
+            }
+        });
+        
 
         return view;
     }
@@ -71,8 +96,8 @@ public class MainFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof InitialFragmentCall) {
-            mListener = (InitialFragmentCall) context;
+        if (context instanceof buttonFragmentCall) {
+            mListener = (buttonFragmentCall) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -85,7 +110,11 @@ public class MainFragment extends Fragment {
         mListener = null;
     }
 
-    public interface InitialFragmentCall {
-        void initialFragmentCall();
+    public interface buttonFragmentCall {
+        void btn_hotelFragmentCall();
+        void btn_foodFragmentCall();
+        void btn_otherFragmentCall();
+        void btn_googleMapsFragmentCall();
+        void btn_fuelOnClickListener();
     }
 }
