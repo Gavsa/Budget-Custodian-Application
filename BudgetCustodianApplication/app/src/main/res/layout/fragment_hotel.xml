@@ -4,7 +4,7 @@
     android:id="@+id/fragment_hotel"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="at.htl.budgetcustodianapplication.facades.HotelFragment">
+    tools:context="at.htl.budgetcustodianapplication.facades.costPointsFragments.HotelFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

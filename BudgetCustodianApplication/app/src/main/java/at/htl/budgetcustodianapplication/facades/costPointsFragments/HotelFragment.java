@@ -1,4 +1,4 @@
-package at.htl.budgetcustodianapplication.facades;
+package at.htl.budgetcustodianapplication.facades.costPointsFragments;
 
 import android.content.Context;
 import android.net.Uri;
@@ -12,17 +12,8 @@ import android.widget.TextView;
 
 import at.htl.budgetcustodianapplication.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link HotelFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link HotelFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class    HotelFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -32,25 +23,14 @@ public class    HotelFragment extends Fragment {
     private Button btn_save;
 
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
     public HotelFragment() {
-        // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HotelFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static HotelFragment newInstance(String param1, String param2) {
         HotelFragment fragment = new HotelFragment();
         Bundle args = new Bundle();
@@ -72,22 +52,13 @@ public class    HotelFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View v = inflater.inflate(R.layout.fragment_hotel, container, false);
         tv_title = (TextView) v.findViewById(R.id.tv_title);
         et_amount = (TextView) v.findViewById(R.id.et_amount);
         tv_grund = (TextView) v.findViewById(R.id.tv_grund);
 
-
-
         return v;
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
     }
 
     @Override
@@ -107,18 +78,7 @@ public class    HotelFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }

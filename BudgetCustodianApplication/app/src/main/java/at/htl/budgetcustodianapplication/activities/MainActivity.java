@@ -6,12 +6,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 import at.htl.budgetcustodianapplication.R;
-import at.htl.budgetcustodianapplication.facades.FoodFragment;
-import at.htl.budgetcustodianapplication.facades.FuelFragment;
-import at.htl.budgetcustodianapplication.facades.GoogleMapsFragment;
-import at.htl.budgetcustodianapplication.facades.HotelFragment;
+import at.htl.budgetcustodianapplication.facades.costPointsFragments.FoodFragment;
+import at.htl.budgetcustodianapplication.facades.costPointsFragments.FuelFragment;
+import at.htl.budgetcustodianapplication.facades.featureFragments.GoogleMapsFragment;
+import at.htl.budgetcustodianapplication.facades.costPointsFragments.HotelFragment;
 import at.htl.budgetcustodianapplication.facades.MainFragment;
-import at.htl.budgetcustodianapplication.facades.OthersFragment;
+import at.htl.budgetcustodianapplication.facades.costPointsFragments.OthersFragment;
+import at.htl.budgetcustodianapplication.facades.recyclerView.AddHolidayFragment;
+import at.htl.budgetcustodianapplication.facades.recyclerView.HolydaysFragment;
 
 
 public class MainActivity extends AppCompatActivity implements MainFragment.buttonFragmentCall,
@@ -19,7 +21,9 @@ public class MainActivity extends AppCompatActivity implements MainFragment.butt
         FoodFragment.OnFragmentFoodInteractionListener,
         OthersFragment.OnFragmentInteractionListener,
         GoogleMapsFragment.OnFragmentInteractionListener,
-        FuelFragment.OnFragmentInteractionListener
+        FuelFragment.OnFragmentInteractionListener,
+        HolydaysFragment.OnAddFragmentInteractionListener,
+        AddHolidayFragment.OnFragmentInteractionListener
 {
 
     @Override
@@ -28,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.butt
         setContentView(R.layout.activity_main);
 
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().add(R.id.fragment_container, new MainFragment()).commit();
+        manager.beginTransaction().add(R.id.fragment_container, new HolydaysFragment()).commit();
 
         /*FirebaseAuth auth = FirebaseAuth.getInstance();
         Intent intent = new Intent(this, GoogleSignInActivity.class);
@@ -70,6 +74,12 @@ public class MainActivity extends AppCompatActivity implements MainFragment.butt
     public void btn_fuelOnClickListener() {
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.fragment_container, new FuelFragment()).addToBackStack("back").commit();
+    }
+
+    @Override
+    public void fabtn_AddFragmentCall() {
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.fragment_container, new AddHolidayFragment()).addToBackStack("back").commit();
     }
 
     @Override
