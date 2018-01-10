@@ -1,5 +1,6 @@
 package at.htl.gavric.entities;
 
+import javax.json.JsonObject;
 import javax.persistence.*;
 
 @Entity
@@ -42,5 +43,13 @@ public class Task {
 
     public void setChecked(boolean checked) {
         this.checked = checked;
+    }
+
+    public static Task fromJSON(JsonObject json) {
+
+        Task h = new Task(json.getString("text"),json.getBoolean(String.valueOf(false)));
+        if (json.containsKey("id"))
+            h.setId(Long.valueOf(json.getInt("id")));
+        return h;
     }
 }

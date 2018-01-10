@@ -12,12 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.32" />
+        app:layout_constraintGuide_percent="0.33" />
 
     <ImageButton
         android:id="@+id/btn_hotel"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="170dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -31,8 +31,8 @@
 
     <ImageButton
         android:id="@+id/btn_food"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="170dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -45,22 +45,24 @@
 
     <ImageButton
         android:id="@+id/btn_fuel"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="170dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.687"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:color/holo_orange_light" />
 
     <ImageButton
         android:id="@+id/btn_other"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="170dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -73,8 +75,8 @@
 
     <ImageButton
         android:id="@+id/btn_GoogleMaps"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="170dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -83,6 +85,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/guideline6"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:color/holo_purple" />
 
     <android.support.constraint.Guideline
@@ -90,16 +93,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65753424" />
+        app:layout_constraintGuide_percent="0.66" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline6"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="192dp" />
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <!--
         <android.support.design.widget.FloatingActionButton

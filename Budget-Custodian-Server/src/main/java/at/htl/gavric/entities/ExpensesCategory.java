@@ -1,5 +1,6 @@
 package at.htl.gavric.entities;
 
+import javax.json.JsonObject;
 import javax.persistence.*;
 
 @Entity
@@ -52,5 +53,14 @@ public class ExpensesCategory {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public static ExpensesCategory fromJSON(JsonObject json) {
+
+        ExpensesCategory h = new ExpensesCategory(json.getString("category"), json.getString("icon"),
+                json.getString("color"));
+        if (json.containsKey("id"))
+            h.setId(Long.valueOf(json.getInt("id")));
+        return h;
     }
 }

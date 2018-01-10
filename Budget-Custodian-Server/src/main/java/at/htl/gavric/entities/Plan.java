@@ -1,8 +1,9 @@
 package at.htl.gavric.entities;
 
+import javax.json.JsonObject;
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
+
 
 @Entity
 @Table(name = "PLAN")
@@ -16,8 +17,7 @@ public class Plan {
     private LocalDate fromDate;
     private LocalDate toDate;
 
-    public Plan() {
-    }
+    public Plan(){}
 
     public Plan(String text, int estimatedExpense, LocalDate fromDate, LocalDate toDate) {
         this.text = text;
@@ -64,5 +64,14 @@ public class Plan {
 
     public void setToDate(LocalDate toDate) {
         this.toDate = toDate;
+    }
+
+    public static Plan fromJSON(JsonObject json) {
+
+        Plan h = new Plan(json.getString("text"),
+                json.getInt("estimatedExpense"),LocalDate.parse(json.getString("fromDate")),LocalDate.parse(json.getString("toDate")));
+        if (json.containsKey("id"))
+            h.setId(Long.valueOf(json.getInt("id")));
+        return h;
     }
 }

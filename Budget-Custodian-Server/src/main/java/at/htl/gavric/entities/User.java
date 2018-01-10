@@ -1,6 +1,7 @@
 package at.htl.gavric.entities;
 
 
+import javax.json.JsonObject;
 import javax.persistence.*;
 
 @Entity
@@ -43,5 +44,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public static User fromJSON(JsonObject json) {
+
+        User h = new User(json.getString("username"),
+                json.getString("password"));
+        if (json.containsKey("id"))
+            h.setId(Long.valueOf(json.getInt("id")));
+        return h;
     }
 }

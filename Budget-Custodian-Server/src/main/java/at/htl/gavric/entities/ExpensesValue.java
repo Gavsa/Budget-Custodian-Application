@@ -1,5 +1,6 @@
 package at.htl.gavric.entities;
 
+import javax.json.JsonObject;
 import javax.persistence.*;
 
 @Entity
@@ -42,5 +43,14 @@ public class ExpensesValue {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public static ExpensesValue fromJSON(JsonObject json) {
+
+        ExpensesValue h = new ExpensesValue(json.getString("name"),
+                json.getInt("value"));
+        if (json.containsKey("id"))
+            h.setId(Long.valueOf(json.getInt("id")));
+        return h;
     }
 }
