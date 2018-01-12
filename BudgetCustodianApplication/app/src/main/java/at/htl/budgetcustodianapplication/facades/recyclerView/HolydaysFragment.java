@@ -66,7 +66,7 @@ public class HolydaysFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
 
         b_addHoliday = (FloatingActionButton) view.findViewById(R.id.fab_addHoliday);

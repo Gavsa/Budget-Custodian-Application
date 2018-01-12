@@ -7,18 +7,20 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_addHoliday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="70dp"
+        android:clickable="false"
+        android:src="@drawable/add_button" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab_addHoliday"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:clickable="false"
-            android:src="@drawable/add_button" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
