@@ -5,15 +5,25 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import at.htl.budgetcustodianapplication.R;
+import at.htl.budgetcustodianapplication.facades.ApplicationDatabase;
+import at.htl.budgetcustodianapplication.facades.FirstFragment;
 import at.htl.budgetcustodianapplication.facades.costPointsFragments.FoodFragment;
 import at.htl.budgetcustodianapplication.facades.costPointsFragments.FuelFragment;
+import at.htl.budgetcustodianapplication.facades.dao.ExpensesCategoryDao;
+import at.htl.budgetcustodianapplication.facades.entities.ExpensesCategory;
+import at.htl.budgetcustodianapplication.facades.entities.Holiday;
 import at.htl.budgetcustodianapplication.facades.featureFragments.GoogleMapsFragment;
 import at.htl.budgetcustodianapplication.facades.costPointsFragments.HotelFragment;
 import at.htl.budgetcustodianapplication.facades.MainFragment;
 import at.htl.budgetcustodianapplication.facades.costPointsFragments.OthersFragment;
 import at.htl.budgetcustodianapplication.facades.recyclerView.AddHolidayFragment;
-import at.htl.budgetcustodianapplication.facades.recyclerView.HolydaysFragment;
+import at.htl.budgetcustodianapplication.facades.recyclerView.categoryRecyclerView.CategoryFragment;
+import at.htl.budgetcustodianapplication.facades.recyclerView.holidayRecyclerView.HolydaysFragment;
 
 
 public class MainActivity extends AppCompatActivity implements MainFragment.buttonFragmentCall,
@@ -23,8 +33,12 @@ public class MainActivity extends AppCompatActivity implements MainFragment.butt
         GoogleMapsFragment.OnFragmentInteractionListener,
         FuelFragment.OnFragmentInteractionListener,
         HolydaysFragment.OnAddFragmentInteractionListener,
-        AddHolidayFragment.OnFragmentInteractionListener
+        AddHolidayFragment.OnFragmentInteractionListener,
+        FirstFragment.OnFragmentInteractionListener,
+        CategoryFragment.OnFragmentInteractionListener
 {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,18 +47,9 @@ public class MainActivity extends AppCompatActivity implements MainFragment.butt
 
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().add(R.id.fragment_container, new HolydaysFragment()).commit();
-
-        /*FirebaseAuth auth = FirebaseAuth.getInstance();
-        Intent intent = new Intent(this, GoogleSignInActivity.class);
-        auth.signOut();
-        if (auth.getCurrentUser() == null) {
-            startActivity(intent);
-            onPause();
-        } else if (auth.getCurrentUser() != null)
-            Toast.makeText(this, "Already authenticated", Toast.LENGTH_LONG).show();
-
-        Log.e("Startup", "Im here now");*/
     }
+
+
 
     @Override
     public void btn_hotelFragmentCall() {
@@ -81,6 +86,14 @@ public class MainActivity extends AppCompatActivity implements MainFragment.butt
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.fragment_container, new AddHolidayFragment()).addToBackStack("back").commit();
     }
+
+    @Override
+    public void onHolidayClicked(Holiday holiday) {
+        FirstFragment firstFragment = FirstFragment.newInstance(holiday);
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.fragment_container,firstFragment).addToBackStack("back").commit();
+    }
+
 
     @Override
     public void onFragmentInteraction(Uri uri) {

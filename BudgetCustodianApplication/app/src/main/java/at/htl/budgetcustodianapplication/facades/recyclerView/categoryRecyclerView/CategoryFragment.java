@@ -1,9 +1,8 @@
-package at.htl.budgetcustodianapplication.facades.recyclerView;
+package at.htl.budgetcustodianapplication.facades.recyclerView.categoryRecyclerView;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,16 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import at.htl.budgetcustodianapplication.R;
-import at.htl.budgetcustodianapplication.facades.entities.Holiday;
+import at.htl.budgetcustodianapplication.facades.ApplicationDatabase;
+import at.htl.budgetcustodianapplication.facades.entities.ExpensesCategory;
 
-public class HolydaysFragment extends Fragment {
+
+public class CategoryFragment extends Fragment {
 
     RecyclerView recyclerView;
-    FloatingActionButton b_addHoliday;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -28,13 +25,13 @@ public class HolydaysFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private OnAddFragmentInteractionListener mListener;
+    private OnFragmentInteractionListener mListener;
 
-    public HolydaysFragment() {
+    public CategoryFragment() {
     }
 
-    public static HolydaysFragment newInstance(String param1, String param2) {
-        HolydaysFragment fragment = new HolydaysFragment();
+    public static CategoryFragment newInstance(String param1, String param2) {
+        CategoryFragment fragment = new CategoryFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -54,38 +51,39 @@ public class HolydaysFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        ApplicationDatabase db = ApplicationDatabase.getInstance(getActivity().getApplicationContext());
+        db.expensesCategoryDao().insertOneExpenseCategory(new ExpensesCategory("Hotel"));
+        db.expensesCategoryDao().insertOneExpenseCategory(new ExpensesCategory("Essen"));
+        db.expensesCategoryDao().insertOneExpenseCategory(new ExpensesCategory("Freizeitaktivität"));
 
-        View view = inflater.inflate(R.layout.fragment_holydays, container, false);
-
-        List<Holiday> holidayList = new LinkedList<Holiday>();
-
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        View view = inflater.inflate(R.layout.fragment_recyclerview_category, container, false);
+        recyclerView = (RecyclerView) view.findViewById(R.id.category_recyclerview);
         recyclerView.setHasFixedSize(true);
 
-        HolidayAdapter adapter = new HolidayAdapter(holidayList);
-        recyclerView.setAdapter(adapter);
 
+        CategoryAdapter adapter = new CategoryAdapter(getActivity().getApplicationContext(),db,getLayoutInflater());
+        recyclerView.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
 
-        b_addHoliday = (FloatingActionButton) view.findViewById(R.id.fab_addHoliday);
 
-        b_addHoliday.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mListener.fabtn_AddFragmentCall();
-            }
-        });
 
         return view;
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnAddFragmentInteractionListener) {
-            mListener = (OnAddFragmentInteractionListener) context;
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -98,7 +96,8 @@ public class HolydaysFragment extends Fragment {
         mListener = null;
     }
 
-    public interface OnAddFragmentInteractionListener {
-        void fabtn_AddFragmentCall();
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
     }
 }

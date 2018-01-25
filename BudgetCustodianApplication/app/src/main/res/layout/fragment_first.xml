@@ -1,13 +1,61 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="at.htl.budgetcustodianapplication.facades.FirstFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
 
-</FrameLayout>
+        <android.support.v7.widget.CardView
+            android:layout_marginBottom="16dp"
+            android:id="@+id/cv_analytics"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+            <include layout="@layout/fragment_show_graph"></include>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_categories"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <!-- Fragments gehören so hinzugefügt als xml fragment und es reicht ned nur include layout. Bei der google maps card drunter gehts schon,
+            da des include layout auf a fragment tag verweist -->
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:name="at.htl.budgetcustodianapplication.facades.recyclerView.categoryRecyclerView.CategoryFragment"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_maps"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <!-- Okay des is jetzt a bissi tricky.. wenn ma auf maps clicked soll ma ja umleiten auf de activity fia maps. De sache is halt
+            jedes touch oder clickevent wird vu dem maps layout in der card abgfangen. sprich wenn du an onClickListener auf des include layout
+            setzen würdest (braucht halt vorher nu a id) würd des nix bringen, da der click oder des touch event vu hmm einfach gsagt der klasse
+            "über dir" verwertet wird. nur wenn de des ned tut dringt des event zu dir durch. um des elegant zu lösen kann ma eben a transparente view
+            über des layout legen. Geht auch mit am framelayout is aber ned so schön. wichtig is, dass du de transparente view als zweites deklarierst.
+            sunst liegts drunter. -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <include layout="@layout/activity_maps"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:id="@+id/view_maps"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</ScrollView>
