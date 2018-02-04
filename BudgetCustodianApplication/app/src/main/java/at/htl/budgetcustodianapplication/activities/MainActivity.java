@@ -99,4 +99,10 @@ public class MainActivity extends AppCompatActivity implements MainFragment.butt
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+    @Override
+    public void onAddHolidayFragmentInteraction() {
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.fragment_container, new HolydaysFragment()).commit();
+    }
 }

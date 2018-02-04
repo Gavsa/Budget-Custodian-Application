@@ -16,42 +16,64 @@
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:text="Name of the Holiday:"
-            android:textSize="20dp" />
+            android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/nameOfHoliday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            />
+
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/dateFrom"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:inputType="textPersonName"
             android:text="from:"
-            android:textSize="20dp" />
+            android:textSize="25sp" />
 
-        <EditText
-            android:id="@+id/editText3"
+        <View
+            android:id="@+id/view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/dateTo"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="to:"
+            android:textSize="25dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:text="to:"
-            android:textSize="20dp" />
+            android:text="Budget:"
+            android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/btn_saveHoliday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save" />
+
     </LinearLayout>
 
 </FrameLayout>

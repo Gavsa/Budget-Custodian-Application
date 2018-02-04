@@ -21,15 +21,18 @@
 
     </LinearLayout>
 
+
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_addHoliday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|right"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="70dp"
         android:clickable="false"
-        android:src="@drawable/add_button"
-        app:backgroundTint="@color/common_google_signin_btn_text_dark_default" />
-
+        app:fabSize="normal"
+        android:src="@drawable/ic_add_white_24dp"
+        />
 </FrameLayout>
