@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import at.htl.budgetcustodianapplication.R;
+import at.htl.budgetcustodianapplication.activities.CheckListActivity;
+import at.htl.budgetcustodianapplication.activities.MainActivity;
 import at.htl.budgetcustodianapplication.activities.MapsActivity;
 import at.htl.budgetcustodianapplication.facades.entities.Holiday;
 
@@ -20,6 +23,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
 
     private Holiday holidayToShow;
     private View mVMaps;
+    private FloatingActionButton checkListButton;
 
     private OnFragmentInteractionListener mListener;
 
@@ -75,6 +79,10 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
         View rootView = inflater.inflate(R.layout.fragment_first, container, false);
         mVMaps = rootView.findViewById(R.id.view_maps);
         mVMaps.setOnClickListener(this);
+
+        checkListButton = (FloatingActionButton) rootView.findViewById(R.id.checkList_btn);
+        checkListButton.setOnClickListener(this);
+
         return rootView;
     }
 
@@ -103,10 +111,15 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
             Intent intent = new Intent(getActivity(), MapsActivity.class);
             startActivity(intent);
         }
+        else if (view.getId() == checkListButton.getId()){
+            Intent intent = new Intent(getActivity(), CheckListActivity.class);
+            startActivity(intent);
+        }
     }
 
 
     public interface OnFragmentInteractionListener {
         void onHolidayClicked(Holiday holiday);
+        void onCheckListButtonClicked();
     }
 }

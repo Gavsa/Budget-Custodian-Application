@@ -120,6 +120,11 @@ public class NavDrawer extends AppCompatActivity
     }
 
     @Override
+    public void onCheckListButtonClicked() {
+
+    }
+
+    @Override
     public void onAddExpenseForCategory() {
 
     }

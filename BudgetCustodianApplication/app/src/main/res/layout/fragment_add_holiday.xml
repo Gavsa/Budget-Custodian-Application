@@ -14,7 +14,9 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
             android:text="Name of the Holiday:"
             android:textSize="25sp" />
 
@@ -22,42 +24,92 @@
             android:id="@+id/nameOfHoliday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:ems="10"
             android:inputType="textPersonName"
-            />
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="24sp" />
 
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="54dp" >
+
+            <TextView
+                android:layout_width="144dp"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="From:"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/fromDateBtn"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:text="Pick Date" />
+        </TableRow>
 
         <TextView
-            android:id="@+id/dateFrom"
+            android:id="@+id/dateFromTextView"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="from:"
-            android:textSize="25sp" />
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="24sp" />
 
         <View
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/cardview_dark_background" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="54dp" >
+
+            <TextView
+                android:layout_width="144dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="5dp"
+                android:text="to:"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/toDateBtn"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:text="Pick Date" />
+        </TableRow>
 
         <TextView
-            android:id="@+id/dateTo"
+            android:id="@+id/dateToTextView"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:text="to:"
-            android:textSize="25dp" />
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="24sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/cardview_dark_background" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
             android:text="Budget:"
             android:textSize="25sp" />
 
@@ -65,8 +117,12 @@
             android:id="@+id/amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:autoText="true"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="number|numberDecimal"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/btn_saveHoliday"

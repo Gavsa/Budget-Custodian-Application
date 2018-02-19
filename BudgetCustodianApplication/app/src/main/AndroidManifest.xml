@@ -38,6 +38,9 @@
             android:name=".activities.NavDrawer"
             android:label="@string/title_activity_nav_drawer"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".activities.CheckListActivity"
+            android:label="@string/title_activity_check_list"></activity>
     </application>
 
 </manifest>
