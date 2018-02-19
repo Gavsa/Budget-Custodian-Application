@@ -1,5 +1,6 @@
 package at.htl.budgetcustodianapplication.activities;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -22,6 +23,7 @@ import at.htl.budgetcustodianapplication.facades.costPointsFragments.HotelFragme
 import at.htl.budgetcustodianapplication.facades.MainFragment;
 import at.htl.budgetcustodianapplication.facades.costPointsFragments.OthersFragment;
 import at.htl.budgetcustodianapplication.facades.recyclerView.AddHolidayFragment;
+import at.htl.budgetcustodianapplication.facades.recyclerView.categoryRecyclerView.AddExpenseFragment;
 import at.htl.budgetcustodianapplication.facades.recyclerView.categoryRecyclerView.CategoryFragment;
 import at.htl.budgetcustodianapplication.facades.recyclerView.holidayRecyclerView.HolydaysFragment;
 
@@ -35,7 +37,8 @@ public class MainActivity extends AppCompatActivity implements MainFragment.butt
         HolydaysFragment.OnAddFragmentInteractionListener,
         AddHolidayFragment.OnFragmentInteractionListener,
         FirstFragment.OnFragmentInteractionListener,
-        CategoryFragment.OnFragmentInteractionListener
+        CategoryFragment.OnFragmentInteractionListener,
+        AddExpenseFragment.OnFragmentInteractionListener
 {
 
 
@@ -89,10 +92,23 @@ public class MainActivity extends AppCompatActivity implements MainFragment.butt
 
     @Override
     public void onHolidayClicked(Holiday holiday) {
-        FirstFragment firstFragment = FirstFragment.newInstance(holiday);
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.fragment_container,firstFragment).addToBackStack("back").commit();
+        //FirstFragment firstFragment = FirstFragment.newInstance(holiday);
+        //FragmentManager manager = getSupportFragmentManager();
+        //manager.beginTransaction().replace(R.id.fragment_container,firstFragment).addToBackStack("back").commit();
+
+        Intent intent = new Intent(this,NavDrawer.class);
+        startActivity(intent);
     }
+
+
+
+
+    @Override
+    public void onAddHolidayFragmentInteraction() {
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.fragment_container, new HolydaysFragment()).commit();
+    }
+
 
 
     @Override
@@ -100,9 +116,15 @@ public class MainActivity extends AppCompatActivity implements MainFragment.butt
 
     }
 
+
     @Override
-    public void onAddHolidayFragmentInteraction() {
+    public void onAddExpenseForCategory(ExpensesCategory expensesCategory) {
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.fragment_container, new HolydaysFragment()).commit();
+        manager.beginTransaction().replace(R.id.fragment_container,new AddExpenseFragment()).addToBackStack("back").commit();
+    }
+
+    @Override
+    public void onAddExpenseForCategory() {
+
     }
 }

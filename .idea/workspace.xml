@@ -1,7 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f1de396-d740-413c-92a5-91c2dc4603e3" name="Default" comment="" />
+    <list default="true" id="6f1de396-d740-413c-92a5-91c2dc4603e3" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/.idea/gradle.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/.idea/runConfigurations.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/google-services.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/proguard-rules.pro" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/androidTest/java/at/htl/budgetcustodianapplication/ExampleInstrumentedTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/debug/res/values/google_maps_api.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/activities/MapsActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/activities/NavDrawer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/ApplicationDatabase.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/FirstFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/MainFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/charts/ShowGraph.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/costPointsFragments/ActivitiesFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/costPointsFragments/ClubFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/costPointsFragments/CultureFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/costPointsFragments/FoodFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/costPointsFragments/FuelFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/costPointsFragments/HotelFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/costPointsFragments/OthersFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/dao/ExpensesCategoryDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/dao/ExpensesValueDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/dao/HolidayDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/entities/DateConverter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/entities/ExpensesCategory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/entities/ExpensesValue.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/entities/Holiday.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/featureFragments/CalendarFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/featureFragments/CreateFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/featureFragments/CurrencyConverterFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/featureFragments/GoogleMapsFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/recyclerView/categoryRecyclerView/CategoryAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/recyclerView/categoryRecyclerView/CategoryFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/recyclerView/categoryRecyclerView/CategoryViewHolder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/recyclerView/holidayRecyclerView/HolidayAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/recyclerView/holidayRecyclerView/HolidayViewHolder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/java/at/htl/budgetcustodianapplication/facades/recyclerView/holidayRecyclerView/HolydaysFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/drawable/ic_menu_camera.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/drawable/ic_menu_gallery.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/drawable/ic_menu_manage.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/drawable/ic_menu_send.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/drawable/ic_menu_share.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/drawable/ic_menu_slideshow.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/drawable/side_nav_bar.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/activity_main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/activity_maps.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/activity_nav_drawer.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/app_bar_nav_drawer.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/content_nav_drawer.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_activities.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_calendar.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_club.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_create.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_culture.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_currency_converter.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_first.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_food.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_fuel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_google_maps.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_hotel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_others.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_recyclerview_category.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/fragment_show_graph.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/holiday_holder.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/layout/nav_header_nav_drawer.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/menu/activity_nav_drawer_drawer.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/menu/nav_drawer.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/values-v21/styles.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/values/dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/main/res/values/styles.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/release/res/values/google_maps_api.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/app/src/test/java/at/htl/budgetcustodianapplication/ExampleUnitTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/gradle.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/gradle/wrapper/gradle-wrapper.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/gradle/wrapper/gradle-wrapper.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/gradlew" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/gradlew.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/settings.gradle" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/.idea/misc.xml" afterPath="$PROJECT_DIR$/BudgetCustodianApplication/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BudgetCustodianApplication/.idea/modules.xml" afterPath="$PROJECT_DIR$/BudgetCustodianApplication/.idea/modules.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +135,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -50,18 +151,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Budget-Custodian-Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Budget-Custodian-Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BudgetCustodianApplication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Budget-Custodian-Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Budget-Custodian-Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BudgetCustodianApplication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BudgetCustodianApplication" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -160,23 +297,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="812" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="812" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24910523" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />

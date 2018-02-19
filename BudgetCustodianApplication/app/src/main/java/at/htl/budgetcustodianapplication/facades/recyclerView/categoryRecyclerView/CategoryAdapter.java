@@ -1,6 +1,7 @@
 package at.htl.budgetcustodianapplication.facades.recyclerView.categoryRecyclerView;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import at.htl.budgetcustodianapplication.facades.ApplicationDatabase;
 import at.htl.budgetcustodianapplication.facades.entities.ExpensesCategory;
 import at.htl.budgetcustodianapplication.facades.entities.Holiday;
 
+import static at.htl.budgetcustodianapplication.facades.recyclerView.categoryRecyclerView.AddExpenseFragment.mListener;
+
 /**
  * Created by Sasa on 18.01.2018.
  */
@@ -23,6 +26,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
     private Context mContext;
     private ApplicationDatabase mDb;
     private LayoutInflater mInflater;
+    private CategoryFragment.OnFragmentInteractionListener mListener = CategoryFragment.mListener;
 
     public CategoryAdapter (Context context, ApplicationDatabase db, LayoutInflater inflater){
         mContext = context;
@@ -43,6 +47,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
     public void onBindViewHolder(CategoryViewHolder holder, int position) {
         final ExpensesCategory expensesCategory = mExpensesCategory.get(position);
         holder.setTitle(expensesCategory);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onAddExpenseForCategory(expensesCategory);
+
+            }
+        });
     }
 
     @Override

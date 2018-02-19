@@ -25,7 +25,7 @@ public class CategoryFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private OnFragmentInteractionListener mListener;
+    public static OnFragmentInteractionListener mListener;
 
     public CategoryFragment() {
     }
@@ -73,9 +73,9 @@ public class CategoryFragment extends Fragment {
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
+    public void onButtonPressed(ExpensesCategory expensesCategory) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onAddExpenseForCategory(expensesCategory);
         }
     }
 
@@ -98,6 +98,6 @@ public class CategoryFragment extends Fragment {
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onAddExpenseForCategory(ExpensesCategory expensesCategory);
     }
 }

@@ -1,8 +1,11 @@
 package at.htl.budgetcustodianapplication.activities;
 
+import android.annotation.SuppressLint;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,10 +17,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import at.htl.budgetcustodianapplication.R;
+import at.htl.budgetcustodianapplication.facades.FirstFragment;
+import at.htl.budgetcustodianapplication.facades.entities.ExpensesCategory;
+import at.htl.budgetcustodianapplication.facades.entities.Holiday;
+import at.htl.budgetcustodianapplication.facades.recyclerView.categoryRecyclerView.AddExpenseFragment;
+import at.htl.budgetcustodianapplication.facades.recyclerView.categoryRecyclerView.CategoryFragment;
 
 public class NavDrawer extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        CategoryFragment.OnFragmentInteractionListener,
+        FirstFragment.OnFragmentInteractionListener,AddExpenseFragment.OnFragmentInteractionListener{
 
+    private View mVMaps;
+
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,14 +38,8 @@ public class NavDrawer extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -42,6 +49,9 @@ public class NavDrawer extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportFragmentManager().beginTransaction().add(R.id.drawer_layout, new FirstFragment()).commit();
     }
 
     @Override
@@ -86,16 +96,8 @@ public class NavDrawer extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_share) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
         } else if (id == R.id.nav_send) {
 
         }
@@ -103,5 +105,22 @@ public class NavDrawer extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    @Override
+    public void onAddExpenseForCategory(ExpensesCategory expensesCategory) {
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.drawer_layout,new AddExpenseFragment()).addToBackStack("back").commit();
+    }
+
+    @Override
+    public void onHolidayClicked(Holiday holiday) {
+
+    }
+
+    @Override
+    public void onAddExpenseForCategory() {
+
     }
 }
