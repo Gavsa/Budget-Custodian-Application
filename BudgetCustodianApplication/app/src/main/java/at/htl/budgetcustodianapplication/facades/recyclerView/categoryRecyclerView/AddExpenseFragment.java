@@ -68,7 +68,7 @@ public class AddExpenseFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_add_expense, container, false);
         edDescription = (EditText) view.findViewById(R.id.etDescription);
         edCostInput = (EditText) view.findViewById(R.id.edCostInput);
-        tvExpenseCategory = (TextView) view.findViewById(R.id.tvExpenseCategory);
+        //tvExpenseCategory = (TextView) view.findViewById(R.id.tvExpenseCategory);
         //tvExpenseCategory.setText(getArguments().getString("getCategory"));
         btnSaveExpense = (Button) view.findViewById(R.id.btnSaveExpense);
 

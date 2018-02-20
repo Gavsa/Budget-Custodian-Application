@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import at.htl.budgetcustodianapplication.R;
 import at.htl.budgetcustodianapplication.facades.FirstFragment;
+import at.htl.budgetcustodianapplication.facades.charts.ShowGraph;
 import at.htl.budgetcustodianapplication.facades.entities.ExpensesCategory;
 import at.htl.budgetcustodianapplication.facades.entities.Holiday;
 import at.htl.budgetcustodianapplication.facades.recyclerView.AddHolidayFragment;
@@ -20,7 +21,8 @@ public class MainActivity extends AppCompatActivity implements
         AddHolidayFragment.OnFragmentInteractionListener,
         FirstFragment.OnFragmentInteractionListener,
         CategoryFragment.OnFragmentInteractionListener,
-        AddExpenseFragment.OnFragmentInteractionListener
+        AddExpenseFragment.OnFragmentInteractionListener,
+        ShowGraph.OnShowGraphFragmentInteractionListener
 {
 
 
@@ -72,5 +74,11 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onAddExpenseForCategory() {
 
+    }
+
+    @Override
+    public void onHolidayOver(Holiday holiday) {
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.fragment_container,new ShowGraph()).addToBackStack("back").commit();
     }
 }

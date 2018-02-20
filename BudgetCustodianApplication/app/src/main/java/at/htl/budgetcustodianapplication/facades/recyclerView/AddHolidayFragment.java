@@ -243,7 +243,7 @@ public class AddHolidayFragment extends Fragment implements View.OnClickListener
             else {
                 try {
                     holiday.setDateFrom(dateFormatter.parse(String.valueOf(this.dateFrom.getText())));
-                    holiday.setDateFrom(dateFormatter.parse(String.valueOf(this.dateTo.getText())));
+                    holiday.setDateTo(dateFormatter.parse(String.valueOf(this.dateTo.getText())));
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }

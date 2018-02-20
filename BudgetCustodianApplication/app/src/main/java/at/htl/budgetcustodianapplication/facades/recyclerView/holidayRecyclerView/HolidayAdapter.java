@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
 import at.htl.budgetcustodianapplication.facades.ApplicationDatabase;
 import at.htl.budgetcustodianapplication.facades.FirstFragment;
+import at.htl.budgetcustodianapplication.facades.charts.ShowGraph;
 import at.htl.budgetcustodianapplication.facades.entities.Holiday;
 
 /**
@@ -29,6 +31,9 @@ public class HolidayAdapter extends RecyclerView.Adapter<HolidayViewHolder> {
     private ApplicationDatabase mDb;
     private LayoutInflater mInflater;
     private HolydaysFragment.OnAddFragmentInteractionListener mListener = HolydaysFragment.mListener;
+    private ShowGraph.OnShowGraphFragmentInteractionListener graphListener = ShowGraph.graphListener;
+    private boolean isHolidayOver = false;
+
 
     /**
      * Constructor bekommt Context als param. Wird zur Zeit noch nicht im Adapter benötigt aber in Zukunft
@@ -54,6 +59,7 @@ public class HolidayAdapter extends RecyclerView.Adapter<HolidayViewHolder> {
     @Override
     public HolidayViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View rootView = mInflater.inflate(android.R.layout.simple_list_item_2, parent,false);
+
         return new HolidayViewHolder(rootView);
     }
 
@@ -61,16 +67,24 @@ public class HolidayAdapter extends RecyclerView.Adapter<HolidayViewHolder> {
     public void onBindViewHolder(final HolidayViewHolder holder, int position) {
         final Holiday holiday = mHolidays.get(position);
         holder.setTitle(holiday);
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.onHolidayClicked(holiday);
+                Date date = new Date();
+                if (date.getTime() > holiday.getDateTo().getTime()){
+                    isHolidayOver = true;
+                }
+                if (isHolidayOver){
+                    graphListener.onHolidayOver(holiday);
+                }
+                else {
+                    mListener.onHolidayClicked(holiday);
+                }
             }
         });
 
     }
-
-
 
     @Override
     public int getItemCount() {
