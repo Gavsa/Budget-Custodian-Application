@@ -105,5 +105,6 @@ public class HolydaysFragment extends Fragment {
     public interface OnAddFragmentInteractionListener {
         void fabtn_AddFragmentCall();
         void onHolidayClicked(Holiday holiday);
+        void OnHolidayIsOver(Holiday holiday);
     }
 }

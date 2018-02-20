@@ -52,7 +52,7 @@ public class ShowGraph extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_show_graph, container, false);
 
-        PieChart chart = (PieChart) view.findViewById(R.id.chart);
+        //PieChart chart = (PieChart) view.findViewById(R.id.chart);
 
         return view;
     }
@@ -75,6 +75,6 @@ public class ShowGraph extends Fragment {
     }
 
     public interface OnShowGraphFragmentInteractionListener {
-        void onHolidayOver(Holiday holiday);
+        void onHolidayOver();
     }
 }

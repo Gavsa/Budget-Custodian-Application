@@ -53,6 +53,12 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
+    public void OnHolidayIsOver(Holiday holiday) {
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.fragment_container, new ShowGraph()).commit();
+    }
+
+    @Override
     public void onCheckListButtonClicked() {
         Intent intent = new Intent(MainActivity.this, CheckListActivity.class);
         startActivity(intent);
@@ -77,8 +83,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onHolidayOver(Holiday holiday) {
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.fragment_container,new ShowGraph()).addToBackStack("back").commit();
+    public void onHolidayOver() {
+
     }
 }

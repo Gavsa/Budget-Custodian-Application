@@ -1,6 +1,8 @@
 package at.htl.budgetcustodianapplication.facades.recyclerView.holidayRecyclerView;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import at.htl.budgetcustodianapplication.R;
 import at.htl.budgetcustodianapplication.facades.ApplicationDatabase;
 import at.htl.budgetcustodianapplication.facades.FirstFragment;
 import at.htl.budgetcustodianapplication.facades.charts.ShowGraph;
@@ -31,7 +34,6 @@ public class HolidayAdapter extends RecyclerView.Adapter<HolidayViewHolder> {
     private ApplicationDatabase mDb;
     private LayoutInflater mInflater;
     private HolydaysFragment.OnAddFragmentInteractionListener mListener = HolydaysFragment.mListener;
-    private ShowGraph.OnShowGraphFragmentInteractionListener graphListener = ShowGraph.graphListener;
     private boolean isHolidayOver = false;
 
 
@@ -76,7 +78,7 @@ public class HolidayAdapter extends RecyclerView.Adapter<HolidayViewHolder> {
                     isHolidayOver = true;
                 }
                 if (isHolidayOver){
-                    graphListener.onHolidayOver(holiday);
+                    mListener.OnHolidayIsOver(holiday);
                 }
                 else {
                     mListener.onHolidayClicked(holiday);

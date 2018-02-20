@@ -11,7 +11,7 @@ import java.util.Date;
 import at.htl.budgetcustodianapplication.facades.entities.Holiday;
 
 /**
- * Created by juliakajic on 07.01.18.
+ * Created by josipkajic on 07.01.18.
  */
 
 public class HolidayViewHolder extends RecyclerView.ViewHolder {
