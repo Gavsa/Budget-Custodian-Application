@@ -21,7 +21,7 @@ import at.htl.budgetcustodianapplication.facades.entities.ExpensesCategory;
  * Use the {@link AddExpenseFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AddExpenseFragment extends Fragment {
+public class AddExpenseFragment extends Fragment implements View.OnClickListener {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -29,9 +29,9 @@ public class AddExpenseFragment extends Fragment {
 
     private String mParam1;
     private String mParam2;
+
     private EditText edDescription;
-    private EditText edCostInput;
-    private TextView tvExpenseCategory;
+    private EditText edAmount;
     private ExpensesCategory expensesCategoryToShow;
     private Button btnSaveExpense;
 
@@ -64,15 +64,13 @@ public class AddExpenseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_add_expense, container, false);
-        edDescription = (EditText) view.findViewById(R.id.etDescription);
-        edCostInput = (EditText) view.findViewById(R.id.edCostInput);
-        //tvExpenseCategory = (TextView) view.findViewById(R.id.tvExpenseCategory);
-        //tvExpenseCategory.setText(getArguments().getString("getCategory"));
+
+        edDescription = (EditText) view.findViewById(R.id.edDescription);
+        edAmount = (EditText) view.findViewById(R.id.edAmount);
         btnSaveExpense = (Button) view.findViewById(R.id.btnSaveExpense);
 
-
+        btnSaveExpense.setOnClickListener(this);
 
         return view;
     }
@@ -96,8 +94,14 @@ public class AddExpenseFragment extends Fragment {
         mListener = null;
     }
 
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == btnSaveExpense.getId()){
+
+        }
+    }
+
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onAddExpenseForCategory();
     }
 }

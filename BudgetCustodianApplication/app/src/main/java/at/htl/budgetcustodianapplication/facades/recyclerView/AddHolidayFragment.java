@@ -24,6 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Formatter;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -54,6 +55,10 @@ public class AddHolidayFragment extends Fragment implements View.OnClickListener
     private DatePickerDialog toDatePickerDialog;
 
     private SimpleDateFormat dateFormatter;
+
+    private Date currentDate = new Date();
+    Date date = new GregorianCalendar(currentDate.getYear(), currentDate.getMonth(), currentDate.getDay()-1).getTime();
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -154,106 +159,161 @@ public class AddHolidayFragment extends Fragment implements View.OnClickListener
 
     @Override
     public void onClick(View view) {
-        if (view == this.dateFromBtn)
-        {
-            fromDatePickerDialog.show();
+        try {
+            if (view == this.dateFromBtn) {
+                fromDatePickerDialog.show();
 
-        } else if (view == this.dateToBtn){
+            } else if (view == this.dateToBtn) {
 
-            toDatePickerDialog.show();
+                toDatePickerDialog.show();
 
-        } else if(view == this.saveBtn)
-        {
-            ApplicationDatabase db = ApplicationDatabase.getInstance(getActivity().getApplicationContext());
-            Holiday holiday = new Holiday();
+            } else if (view == this.saveBtn) {
+                ApplicationDatabase db = ApplicationDatabase.getInstance(getActivity().getApplicationContext());
+                Holiday holiday = new Holiday();
 
-            //region Holiday Validation
-            if (String.valueOf(nameOfHoliday.getText()).equals(null) || String.valueOf(nameOfHoliday.getText()).equals("")){
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
-                builder1.setMessage("Holidayname cannot be empty!!");
-                builder1.setCancelable(true);
+                //region Holiday Validation
+                if (String.valueOf(nameOfHoliday.getText()).equals(null) || String.valueOf(nameOfHoliday.getText()).equals("")) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
+                    builder1.setMessage("Holidayname cannot be empty!!");
+                    builder1.setCancelable(true);
 
-                builder1.setPositiveButton(
-                        "Ok",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+                    builder1.setPositiveButton(
+                            "Ok",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
 
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
-            }
-            //endregion
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                }
+                //endregion
 
-            else if(String.valueOf(amount.getText()).equals(null) || String.valueOf(amount.getText()).equals("")){
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
-                builder1.setMessage("Budget cannot be empty!");
-                builder1.setCancelable(true);
+                //region Budget Validation
+                else if (String.valueOf(amount.getText()).equals(null) || String.valueOf(amount.getText()).equals("")) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
+                    builder1.setMessage("Budget cannot be empty!");
+                    builder1.setCancelable(true);
 
-                builder1.setPositiveButton(
-                        "Ok",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+                    builder1.setPositiveButton(
+                            "Ok",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
 
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
-            }
-            //region Budget Validation
-            else if(Integer.parseInt(String.valueOf(amount.getText())) <= 0){
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
-                builder1.setMessage("Budget has to be bigger than 0!");
-                builder1.setCancelable(true);
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                } else if (Integer.parseInt(String.valueOf(amount.getText())) <= 0) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
+                    builder1.setMessage("Budget has to be bigger than 0!");
+                    builder1.setCancelable(true);
 
-                builder1.setPositiveButton(
-                        "Ok",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+                    builder1.setPositiveButton(
+                            "Ok",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
 
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
-            }
-            //endregion
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                }
+                //endregion
 
-            //region Dates Validation
-            else if(String.valueOf(dateFrom.getText()).equals(null) || String.valueOf(dateFrom.getText()).equals("") || String.valueOf(dateTo.getText()).equals(null) || String.valueOf(dateTo.getText()).equals("")){
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
-                builder1.setMessage("Datefields cannot be empty!");
-                builder1.setCancelable(true);
+                //region Dates Validation
+                else if (String.valueOf(dateFrom.getText()).equals(null) || String.valueOf(dateFrom.getText()).equals("") || String.valueOf(dateTo.getText()).equals(null) || String.valueOf(dateTo.getText()).equals("")) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
+                    builder1.setMessage("Datefields cannot be empty!");
+                    builder1.setCancelable(true);
+                    builder1.setPositiveButton(
+                            "Ok",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
 
-                builder1.setPositiveButton(
-                        "Ok",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                }
+                if(dateFormatter.parse(dateFrom.getText().toString()).getTime() < date.getTime()){
+                    AlertDialog.Builder builder2 = new AlertDialog.Builder(getContext());
+                    builder2.setMessage("The From-Date can't be smaller than the Current-Date!");
+                    builder2.setCancelable(true);
 
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
-            }
-            //endregion
+                    builder2.setPositiveButton(
+                            "Ok",
+                            new DialogInterface.OnClickListener()
 
-            else {
-                try {
-                    holiday.setDateFrom(dateFormatter.parse(String.valueOf(this.dateFrom.getText())));
-                    holiday.setDateTo(dateFormatter.parse(String.valueOf(this.dateTo.getText())));
-                } catch (ParseException e) {
-                    e.printStackTrace();
+                            {
+                                public void onClick (DialogInterface dialog,int id){
+                                    dialog.cancel();
+                                }
+                            });
+
+                    AlertDialog alert12 = builder2.create();
+                    alert12.show();
+                }
+                else if (dateFormatter.parse(dateTo.getText().toString()).getTime() < date.getTime()){
+                    AlertDialog.Builder builder2 = new AlertDialog.Builder(getContext());
+                    builder2.setMessage("The To-Date can't be smaller than the Current-Date!");
+                    builder2.setCancelable(true);
+
+                    builder2.setPositiveButton(
+                            "Ok",
+                            new DialogInterface.OnClickListener()
+
+                            {
+                                public void onClick (DialogInterface dialog,int id){
+                                    dialog.cancel();
+                                }
+                            });
+
+                    AlertDialog alert12 = builder2.create();
+                    alert12.show();
+                }
+                else if(dateFormatter.parse(dateTo.getText().toString()).getTime() < dateFormatter.parse(dateFrom.getText().toString()).getTime()){
+                    AlertDialog.Builder builder2 = new AlertDialog.Builder(getContext());
+                    builder2.setMessage("The To-Date can't be smaller than the From-Date!");
+                    builder2.setCancelable(true);
+
+                    builder2.setPositiveButton(
+                            "Ok",
+                            new DialogInterface.OnClickListener()
+
+                            {
+                                public void onClick (DialogInterface dialog,int id){
+                                    dialog.cancel();
+                                }
+                            });
+
+                    AlertDialog alert12 = builder2.create();
+                    alert12.show();
                 }
 
-                holiday.setBudget(Double.parseDouble(String.valueOf(this.amount.getText())));
-                holiday.setTitle(String.valueOf(this.nameOfHoliday.getText()));
-                db.holidayDao().insertOneHoliday(holiday);
+                //endregion
 
-                mListener.onAddHolidayFragmentInteraction();
+                else {
+                    try {
+                        holiday.setDateFrom(dateFormatter.parse(String.valueOf(this.dateFrom.getText())));
+                        holiday.setDateTo(dateFormatter.parse(String.valueOf(this.dateTo.getText())));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+                    holiday.setBudget(Double.parseDouble(String.valueOf(this.amount.getText())));
+                    holiday.setTitle(String.valueOf(this.nameOfHoliday.getText()));
+                    db.holidayDao().insertOneHoliday(holiday);
+
+                    mListener.onAddHolidayFragmentInteraction();
+                }
             }
+        }catch (ParseException e){
+            e.printStackTrace();
         }
     }
 

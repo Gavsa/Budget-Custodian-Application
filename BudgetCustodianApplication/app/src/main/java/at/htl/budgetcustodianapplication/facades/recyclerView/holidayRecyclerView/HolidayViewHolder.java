@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import at.htl.budgetcustodianapplication.facades.entities.Holiday;
 
@@ -34,7 +35,8 @@ public class HolidayViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void setTitle(Holiday holiday){
-        Date date = new Date();
+        Date currentDate = new Date();
+        Date date = new GregorianCalendar(currentDate.getYear(), currentDate.getMonth(), currentDate.getDay()-1).getTime();
         if (date.getTime() > holiday.getDateTo().getTime()){
             tvName.setTextColor(Color.RED);
             tvEndDate.setText("Holiday is over");
