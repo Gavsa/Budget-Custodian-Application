@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void OnHolidayIsOver(Holiday holiday) {
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.fragment_container, new ShowGraph()).commit();
+        manager.beginTransaction().replace(R.id.fragment_container, new ShowGraph()).addToBackStack("back").commit();
     }
 
     @Override

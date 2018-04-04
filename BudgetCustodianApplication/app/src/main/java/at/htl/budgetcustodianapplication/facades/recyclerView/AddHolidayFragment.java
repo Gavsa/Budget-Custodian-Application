@@ -101,12 +101,12 @@ public class AddHolidayFragment extends Fragment implements View.OnClickListener
         dateFrom = (TextView) view.findViewById(R.id.dateFromTextView);
         dateTo = (TextView) view.findViewById(R.id.dateToTextView);
 
+        saveBtn.setOnClickListener(this);
 
         dateFromBtn.setOnClickListener(this);
+
         InputMethodManager inputManager = (InputMethodManager) this.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         inputManager.hideSoftInputFromWindow(dateFromBtn.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-
-        saveBtn.setOnClickListener(this);
 
         Calendar newCalendar = Calendar.getInstance();
         fromDatePickerDialog = new DatePickerDialog(this.getContext(), new DatePickerDialog.OnDateSetListener() {
@@ -172,6 +172,7 @@ public class AddHolidayFragment extends Fragment implements View.OnClickListener
                 Holiday holiday = new Holiday();
 
                 //region Holiday Validation
+
                 if (String.valueOf(nameOfHoliday.getText()).equals(null) || String.valueOf(nameOfHoliday.getText()).equals("")) {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
                     builder1.setMessage("Holidayname cannot be empty!!");
@@ -240,7 +241,7 @@ public class AddHolidayFragment extends Fragment implements View.OnClickListener
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
                 }
-                if(dateFormatter.parse(dateFrom.getText().toString()).getTime() < date.getTime()){
+                else if(dateFormatter.parse(dateFrom.getText().toString()).getTime() < date.getTime()){
                     AlertDialog.Builder builder2 = new AlertDialog.Builder(getContext());
                     builder2.setMessage("The From-Date can't be smaller than the Current-Date!");
                     builder2.setCancelable(true);

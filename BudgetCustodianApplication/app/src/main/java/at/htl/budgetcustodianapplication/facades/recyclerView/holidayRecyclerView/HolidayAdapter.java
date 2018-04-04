@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -73,8 +74,9 @@ public class HolidayAdapter extends RecyclerView.Adapter<HolidayViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Date date = new Date();
-                if (date.getTime() > holiday.getDateTo().getTime()){
+                Date currentDate = new Date();
+
+                if (currentDate.getTime() > holiday.getDateTo().getTime()){
                     isHolidayOver = true;
                 }
                 if (isHolidayOver){

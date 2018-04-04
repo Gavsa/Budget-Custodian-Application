@@ -87,7 +87,7 @@
                 android:layout_width="144dp"
                 android:layout_height="32dp"
                 android:layout_marginLeft="5dp"
-                android:text="to:"
+                android:text="To:"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="24sp" />
 
